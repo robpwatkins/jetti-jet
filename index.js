@@ -1,24 +1,39 @@
 const gameContainer = document.querySelector('#game-container');
 const jett = document.querySelector('#jett');
-const distance = 100;
+const space = document.querySelector('#space');
+const distance = 5;
 // let jettHeight = 200;
 const screenHeight = 1000;
+let jumping = false;
 
-const ascend = () => {
-  let jettHeight = parseInt(window.getComputedStyle(jett).getPropertyValue('top'));
-  jettHeight -= distance;
-  jett.style.top = `${jettHeight}px`;
+const jump = () => {
+  jumping = true;
+  let jumpCount = 0;
+  const jumpInterval = setInterval(() => {
+    let jettHeight = parseInt(window.getComputedStyle(jett).getPropertyValue('top'));
+    if ((jettHeight > 6) && (jumpCount < 15)) jett.style.top = `${jettHeight - 4.5}px`;
+    if (jumpCount > 20) {
+      clearInterval(jumpInterval);
+      jumping = false;
+      jumpCount = 0;
+    }
+    jumpCount++;
+  }, 10);
 };
 
 setInterval(() => {
   const jettTop = parseInt(window.getComputedStyle(jett).getPropertyValue('top'));
-  console.log('jettTop: ', jettTop + 3);
-  jett.style.top = `${jettTop + 3}px`;
+  if (!jumping) jett.style.top = `${jettTop + 2.5}px`;
 }, 10)
 
 const handleClick = () => {
-  ascend();
+  jump();
   // descend();
 };
+
+space.addEventListener('animationiteration', () => {
+  const random = -((Math.random() * 300) + 150);
+  space.style.top = `${random}px`;
+})
 
 gameContainer.addEventListener('click', handleClick);

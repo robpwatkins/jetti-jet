@@ -29,6 +29,7 @@ body {
   /* width: 250px;
   height: 250px; */
   position: absolute;
+  z-index: 2;
   /* top: 200px; */
   /* border: 1px solid black; */
   /* transition: all .5s ease-in-out; */
@@ -39,16 +40,17 @@ body {
 }
 
 img {
-  width: 100px;
+  width: 125px;
 }
 
 .fawkes {
-  position: absolute;
+  position: relative;
   left: 400px;
   width: 50px;
   height: 500px;
   background-color: tan;
-  animation: fawkes 1s infinite linear;
+  animation: fawkes 2s infinite linear;
+  z-index: 0;
 }
 
 @keyframes fawkes {
@@ -58,4 +60,15 @@ img {
   100% {
     left: -50px
   }
+}
+
+#space {
+  width: 50px;
+  height: 150px;
+  background-color: white;
+  position: relative;
+  left: 400px;
+  top: -500px;
+  animation: fawkes 2s infinite linear;
+  z-index: 1;
 }
