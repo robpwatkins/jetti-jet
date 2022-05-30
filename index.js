@@ -1,6 +1,6 @@
 const gameContainer = document.querySelector('#game-container');
 const jett = document.querySelector('#jett');
-const space = document.querySelector('#space');
+const spaceAndHead = document.querySelector('#space-and-head');
 const distance = 5;
 // let jettHeight = 200;
 const screenHeight = 1000;
@@ -28,12 +28,11 @@ setInterval(() => {
 
 const handleClick = () => {
   jump();
-  // descend();
 };
 
-space.addEventListener('animationiteration', () => {
+spaceAndHead.addEventListener('animationiteration', () => {
   const random = -((Math.random() * 300) + 150);
-  space.style.top = `${random}px`;
+  spaceAndHead.style.top = `${random}px`;
 })
 
 gameContainer.addEventListener('click', handleClick);

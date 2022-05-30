@@ -25,6 +25,13 @@ body {
   background-size: 100% 100%; */
 }
 
+#jett, #head,#front-feet-box, #back-feet-and-tail {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 #jett {
   /* width: 250px;
   height: 250px; */
@@ -33,14 +40,10 @@ body {
   /* top: 200px; */
   /* border: 1px solid black; */
   /* transition: all .5s ease-in-out; */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
-img {
-  width: 125px;
+#jett-jet {
+  width: 115px;
 }
 
 .fawkes {
@@ -48,7 +51,7 @@ img {
   left: 400px;
   width: 50px;
   height: 500px;
-  background-color: tan;
+  background-color: #dbab78;
   animation: fawkes 2s infinite linear;
   z-index: 0;
 }
@@ -62,13 +65,47 @@ img {
   }
 }
 
-#space {
+#space-and-head {
   width: 50px;
-  height: 150px;
+  height: 255px;
   background-color: white;
   position: relative;
   left: 400px;
   top: -500px;
   animation: fawkes 2s infinite linear;
   z-index: 1;
+}
+
+#head {
+  position: absolute;
+  top: 174px;
+  left: -48px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#fawkes-face {
+  width: 125px;
+}
+
+#front-feet-box {
+  position: absolute;
+  top: 245px;
+  left: -76px;
+}
+
+#front-feet {
+  width: 85px;
+}
+
+#back-feet-and-tail {
+  position: relative;
+  top: -90px;
+  left: -29px;
+}
+
+#feet-and-tail {
+  width: 105px;
 }
